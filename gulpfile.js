@@ -69,7 +69,7 @@ gulp.task('copy-fonts', function(){
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('libs', 'templates', 'styles', 'scripts', 'images', 'copy-fonts');
+    gulp.start('templates', 'styles', 'scripts', 'images', 'copy-fonts');
 });
 
 gulp.task('watch', function(){
