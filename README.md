@@ -1,7 +1,6 @@
-# Tenue CSS
-### Pixeden Playground
+### Boilerplate for Playground
 
-A little CSS text experiment by [Pixeden](http://www.pixeden.com/)
+Some instructions here
 
 How to use:
     
