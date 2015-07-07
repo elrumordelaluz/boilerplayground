@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssmin = require('gulp-cssmin'),
+    header  = require('gulp-header'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
@@ -12,16 +13,30 @@ var gulp = require('gulp'),
     del = require('del'),
     changed = require('gulp-changed'),
     svgmin = require('gulp-svgmin'),
-    jade = require('gulp-jade');
+    jade = require('gulp-jade'),
+    package = require('./package.json');
 
+
+var banner = [
+  '/* * * * * * * * * * * * * * * * * * * * *\\ \n',
+    ' <%= package.name %> ',
+    'v<%= package.version %> \n ',
+    '<%= package.description %> \n',
+    ' (c) ' + new Date().getFullYear() + ' <%= package.author %> \n',
+    ' <%= package.homepage %> \n',
+  '\\* * * * * * * * * * * * * * * * * * * * */',
+  '\n'
+].join('');
 
 gulp.task('styles', function(){
   return sass('src/styles/', 
               { style: 'expanded' })
+              .pipe(header(banner, { package : package }))
               .pipe(autoprefixer())
               .pipe(gulp.dest('dist/assets/css'))
               .pipe(rename({suffix: '.min'}))
               .pipe(cssmin())
+              .pipe(header(banner, { package : package }))
               .pipe(gulp.dest('dist/assets/css'))
               .pipe(notify({ message: 'Styles task complete!'}));
 });
