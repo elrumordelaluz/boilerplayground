@@ -1,13 +1,10 @@
 ### Boilerplate for Playground
 
-Some instructions here
-
-How to use:
+Clone:
     
-    // CSS
-    // Sass
+    git clone https://github.com/elrumordelaluz/boilerplayground.git newPlaygrond
 
 Then:
 
-    bower install
+    sudo npm i
 
