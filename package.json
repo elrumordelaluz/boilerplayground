@@ -5,13 +5,13 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/elrumordelaluz/boilerplayground-git"
+    "url": "git://github.com/elrumordelaluz/boilerplayground.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Pixeden",
-  "homepage": "",
+  "homepage": "http://www.pixeden.com/",
   "license": "ISC",
   "dependencies": {
     "del": "^1.1.1",
